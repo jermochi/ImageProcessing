@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.clear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,18 +44,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.originalBox = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.processedBox = new System.Windows.Forms.PictureBox();
             this.loadImage = new System.Windows.Forms.Button();
             this.processImage = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.subtraction = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.originalBox)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +96,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.subtraction);
             this.panel2.Controls.Add(this.sepia);
             this.panel2.Controls.Add(this.histogram);
             this.panel2.Controls.Add(this.colorInversion);
@@ -109,7 +111,7 @@
             // 
             this.sepia.AutoSize = true;
             this.sepia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sepia.Location = new System.Drawing.Point(25, 274);
+            this.sepia.Location = new System.Drawing.Point(25, 255);
             this.sepia.Name = "sepia";
             this.sepia.Size = new System.Drawing.Size(69, 22);
             this.sepia.TabIndex = 4;
@@ -121,7 +123,7 @@
             // 
             this.histogram.AutoSize = true;
             this.histogram.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.histogram.Location = new System.Drawing.Point(25, 229);
+            this.histogram.Location = new System.Drawing.Point(25, 210);
             this.histogram.Name = "histogram";
             this.histogram.Size = new System.Drawing.Size(101, 22);
             this.histogram.TabIndex = 3;
@@ -133,7 +135,7 @@
             // 
             this.colorInversion.AutoSize = true;
             this.colorInversion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorInversion.Location = new System.Drawing.Point(25, 183);
+            this.colorInversion.Location = new System.Drawing.Point(25, 164);
             this.colorInversion.Name = "colorInversion";
             this.colorInversion.Size = new System.Drawing.Size(139, 22);
             this.colorInversion.TabIndex = 2;
@@ -145,7 +147,7 @@
             // 
             this.greyScale.AutoSize = true;
             this.greyScale.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greyScale.Location = new System.Drawing.Point(25, 136);
+            this.greyScale.Location = new System.Drawing.Point(25, 117);
             this.greyScale.Name = "greyScale";
             this.greyScale.Size = new System.Drawing.Size(106, 22);
             this.greyScale.TabIndex = 1;
@@ -157,7 +159,7 @@
             // 
             this.basicCopy.AutoSize = true;
             this.basicCopy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.basicCopy.Location = new System.Drawing.Point(25, 87);
+            this.basicCopy.Location = new System.Drawing.Point(25, 68);
             this.basicCopy.Name = "basicCopy";
             this.basicCopy.Size = new System.Drawing.Size(108, 22);
             this.basicCopy.TabIndex = 0;
@@ -201,8 +203,24 @@
             this.panel4.Controls.Add(this.processedBox);
             this.panel4.Location = new System.Drawing.Point(595, 110);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(350, 327);
+            this.panel4.Size = new System.Drawing.Size(358, 327);
             this.panel4.TabIndex = 3;
+            // 
+            // chart1
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(-21, 64);
+            this.chart1.Name = "chart1";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(509, 263);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
             // 
             // label2
             // 
@@ -247,21 +265,18 @@
             this.processImage.UseVisualStyleBackColor = false;
             this.processImage.Click += new System.EventHandler(this.processImage_Click);
             // 
-            // chart1
+            // subtraction
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(-21, 64);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(509, 263);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart1";
+            this.subtraction.AutoSize = true;
+            this.subtraction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtraction.Location = new System.Drawing.Point(25, 300);
+            this.subtraction.Name = "subtraction";
+            this.subtraction.Size = new System.Drawing.Size(111, 22);
+            this.subtraction.TabIndex = 5;
+            this.subtraction.TabStop = true;
+            this.subtraction.Text = "Subtraction";
+            this.subtraction.UseVisualStyleBackColor = true;
+            this.subtraction.CheckedChanged += new System.EventHandler(this.subtraction_CheckedChanged);
             // 
             // Form1
             // 
@@ -285,8 +300,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.originalBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,6 +326,7 @@
         private System.Windows.Forms.RadioButton basicCopy;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.RadioButton subtraction;
     }
 }
 

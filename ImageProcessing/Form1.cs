@@ -16,7 +16,6 @@ namespace ImageProcessing
         public Form1()
         {
             InitializeComponent();
-            chart1.Visible = false; 
         }
 
         private void loadImage_Click(object sender, EventArgs e)
@@ -209,6 +208,17 @@ namespace ImageProcessing
             originalBox.Image = null;
             processedBox.Image = null;
             chart1.Visible = false;
+        }
+
+        private void subtraction_CheckedChanged(object sender, EventArgs e)
+        {
+            if (subtraction.Checked)
+            {
+                this.Hide();
+                subtraction.Checked = false;
+                SubtractionForm subForm = new SubtractionForm();
+                subForm.Show();
+            }
         }
     }
 }
