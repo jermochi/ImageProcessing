@@ -16,6 +16,7 @@ namespace ImageProcessing
         public Form1()
         {
             InitializeComponent();
+            chart1.Visible = false; 
         }
 
         private void loadImage_Click(object sender, EventArgs e)
@@ -33,6 +34,8 @@ namespace ImageProcessing
 
         private void processImage_Click(object sender, EventArgs e)
         {
+            chart1.Visible = false;
+            processedBox.Visible = true;
             if (basicCopy.Checked)
             {
                 BasicCopy();
@@ -47,7 +50,9 @@ namespace ImageProcessing
             }
             else if (histogram.Checked)
             {
-           
+                chart1.Visible = true;
+                processedBox.Visible = false;
+                Histogram();
             }
             else if (sepia.Checked)
             {
@@ -128,11 +133,50 @@ namespace ImageProcessing
             processedBox.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
+        public void Histogram()
+        {
+            if (originalBox.Image == null)
+            {
+                MessageBox.Show("Please load an image first.");
+                return;
+            }
+
+            Bitmap source = new Bitmap(originalBox.Image);
+            int[] histogram = new int[256];
+
+            for (int x = 0; x < source.Width; x++)
+            {
+                for (int y = 0; y < source.Height; y++)
+                {
+                    Color pixelColor = source.GetPixel(x, y);
+                    int gray = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
+                    histogram[gray]++;
+                }
+            }
+
+            chart1.Series.Clear();
+            chart1.ChartAreas[0].AxisX.Title = "Gray Level";
+            chart1.ChartAreas[0].AxisY.Title = "Frequency";
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+            chart1.ChartAreas[0].AxisX.Maximum = 255;
+
+            var series = new System.Windows.Forms.DataVisualization.Charting.Series("Histogram");
+            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            series.Color = Color.LightBlue;
+
+            for (int i = 0; i < 256; i++)
+            {
+                series.Points.AddXY(i, histogram[i]);
+            }
+
+            chart1.Series.Add(series);
+        }
 
         private void clear_Click(object sender, EventArgs e)
         {
             originalBox.Image = null;
-            processedBox.Image = null; 
+            processedBox.Image = null;
+            chart1.Visible = false;
         }
     }
 }
