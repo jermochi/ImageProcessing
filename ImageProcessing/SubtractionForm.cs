@@ -13,6 +13,9 @@ namespace ImageProcessing
 {
     public partial class SubtractionForm : Form
     {
+        Device[] devices;
+        Device selectedDevice;
+        bool isPreviewing = false;
         public SubtractionForm()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace ImageProcessing
             colorInversion.Checked = false;
             histogram.Checked = false;
             sepia.Checked = false;
-            subtraction.Checked = false;
+            subtraction.Checked = true;
         }
 
         private void basicCopy_CheckedChanged(object sender, EventArgs e)
@@ -64,6 +67,8 @@ namespace ImageProcessing
             {
                 ABox.Image = Image.FromFile(ofd.FileName);
                 ABox.SizeMode = PictureBoxSizeMode.Zoom;
+                var img = new Bitmap(ABox.Image);
+                label.Text = $"Resolution: {img.Width} x {img.Height}";
             }
         }
 
@@ -77,6 +82,8 @@ namespace ImageProcessing
             {
                 BBox.Image = Image.FromFile(ofd.FileName);
                 BBox.SizeMode = PictureBoxSizeMode.Zoom;
+                var img = new Bitmap(BBox.Image);
+                labelB.Text = $"Resolution: {img.Width} x {img.Height}";
             }
         }
 
@@ -122,6 +129,44 @@ namespace ImageProcessing
             ABox.Image = null;
             BBox.Image = null;
             pictureBox1.Image = null;
+            label.Text = $"Resolution:";
+            labelB.Text = $"Resolution:";
+        }
+
+        private void camera_Click(object sender, EventArgs e)
+        {
+            if (!isPreviewing)
+            {
+                if (devices == null)
+                {
+                    devices = DeviceManager.GetAllDevices();
+                    if (devices.Length == 0)
+                    {
+                        MessageBox.Show("No webcam detected!");
+                        return;
+                    }
+                    selectedDevice = devices[0];
+                }
+
+                selectedDevice.ShowWindow(ABox);
+                camera.Text = "Capture";
+                isPreviewing = true;
+            }
+            else
+            {
+                selectedDevice.Sendmessage();
+                if (Clipboard.ContainsImage())
+                {
+                    var img = Clipboard.GetImage();
+                    ABox.Image = new System.Drawing.Bitmap(img);
+                    label.Text = $"Resolution: {img.Width} x {img.Height}";
+                }
+
+                selectedDevice.Stop();
+                camera.Text = "Use Camera";
+                ABox.SizeMode = PictureBoxSizeMode.Zoom;
+                isPreviewing = false;
+            }
         }
     }
 }

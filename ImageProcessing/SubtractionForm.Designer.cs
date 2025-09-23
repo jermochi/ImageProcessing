@@ -50,6 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.loadBackground = new System.Windows.Forms.Button();
+            this.label = new System.Windows.Forms.Label();
+            this.camera = new System.Windows.Forms.Button();
+            this.labelB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BBox)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ABox)).BeginInit();
@@ -94,6 +97,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.labelB);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.BBox);
             this.panel4.Location = new System.Drawing.Point(595, 115);
@@ -134,6 +138,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Controls.Add(this.label);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.ABox);
             this.panel3.Location = new System.Drawing.Point(218, 115);
@@ -259,6 +264,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.camera);
             this.panel1.Controls.Add(this.clear);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, 1);
@@ -305,6 +311,38 @@
             this.loadBackground.Text = "Load Background";
             this.loadBackground.UseVisualStyleBackColor = true;
             this.loadBackground.Click += new System.EventHandler(this.loadBackground_Click);
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(130, 27);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(93, 18);
+            this.label.TabIndex = 2;
+            this.label.Text = "Resolution: ";
+            // 
+            // camera
+            // 
+            this.camera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.camera.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camera.Location = new System.Drawing.Point(409, 20);
+            this.camera.Name = "camera";
+            this.camera.Size = new System.Drawing.Size(157, 46);
+            this.camera.TabIndex = 8;
+            this.camera.Text = "Use Camera";
+            this.camera.UseVisualStyleBackColor = true;
+            this.camera.Click += new System.EventHandler(this.camera_Click);
+            // 
+            // labelB
+            // 
+            this.labelB.AutoSize = true;
+            this.labelB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelB.Location = new System.Drawing.Point(130, 27);
+            this.labelB.Name = "labelB";
+            this.labelB.Size = new System.Drawing.Size(93, 18);
+            this.labelB.TabIndex = 3;
+            this.labelB.Text = "Resolution: ";
             // 
             // SubtractionForm
             // 
@@ -362,5 +400,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button loadBackground;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button camera;
+        private System.Windows.Forms.Label labelB;
     }
 }

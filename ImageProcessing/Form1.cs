@@ -13,6 +13,9 @@ namespace ImageProcessing
 {
     public partial class Form1 : Form
     {
+        Device[] devices;
+        Device selectedDevice;
+        bool isPreviewing = false;
         public Form1()
         {
             InitializeComponent();
@@ -218,6 +221,41 @@ namespace ImageProcessing
                 subtraction.Checked = false;
                 SubtractionForm subForm = new SubtractionForm();
                 subForm.Show();
+            }
+        }
+
+        private void camera_Click(object sender, EventArgs e)
+        {
+            if (!isPreviewing)
+            {
+                if (devices == null)
+                {
+                    devices = DeviceManager.GetAllDevices();
+                    if (devices.Length == 0)
+                    {
+                        MessageBox.Show("No webcam detected!");
+                        return;
+                    }
+                    selectedDevice = devices[0]; 
+                }
+
+                selectedDevice.ShowWindow(originalBox);
+                camera.Text = "Capture";
+                isPreviewing = true;
+            }
+            else
+            {
+                selectedDevice.Sendmessage(); 
+                if (Clipboard.ContainsImage())
+                {
+                    var img = Clipboard.GetImage();
+                    originalBox.Image = new System.Drawing.Bitmap(img);
+                }
+
+                selectedDevice.Stop();
+                camera.Text = "Use Camera";
+                originalBox.SizeMode = PictureBoxSizeMode.Zoom;
+                isPreviewing = false;
             }
         }
     }

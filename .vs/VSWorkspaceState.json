@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ImageProcessing"
   ],
-  "SelectedNode": "\\C:\\Users\\User\\Source\\Repos\\ImageProcessing",
+  "SelectedNode": "\\ImageProcessing\\SubtractionForm.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -32,9 +32,11 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.camera = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.subtraction = new System.Windows.Forms.RadioButton();
             this.sepia = new System.Windows.Forms.RadioButton();
             this.histogram = new System.Windows.Forms.RadioButton();
             this.colorInversion = new System.Windows.Forms.RadioButton();
@@ -49,7 +51,6 @@
             this.processedBox = new System.Windows.Forms.PictureBox();
             this.loadImage = new System.Windows.Forms.Button();
             this.processImage = new System.Windows.Forms.Button();
-            this.subtraction = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,12 +64,25 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.camera);
             this.panel1.Controls.Add(this.clear);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, -4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(982, 85);
             this.panel1.TabIndex = 0;
+            // 
+            // camera
+            // 
+            this.camera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.camera.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camera.Location = new System.Drawing.Point(409, 20);
+            this.camera.Name = "camera";
+            this.camera.Size = new System.Drawing.Size(157, 46);
+            this.camera.TabIndex = 7;
+            this.camera.Text = "Use Camera";
+            this.camera.UseVisualStyleBackColor = true;
+            this.camera.Click += new System.EventHandler(this.camera_Click);
             // 
             // clear
             // 
@@ -106,6 +120,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 434);
             this.panel2.TabIndex = 1;
+            // 
+            // subtraction
+            // 
+            this.subtraction.AutoSize = true;
+            this.subtraction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtraction.Location = new System.Drawing.Point(25, 300);
+            this.subtraction.Name = "subtraction";
+            this.subtraction.Size = new System.Drawing.Size(111, 22);
+            this.subtraction.TabIndex = 5;
+            this.subtraction.TabStop = true;
+            this.subtraction.Text = "Subtraction";
+            this.subtraction.UseVisualStyleBackColor = true;
+            this.subtraction.CheckedChanged += new System.EventHandler(this.subtraction_CheckedChanged);
             // 
             // sepia
             // 
@@ -265,19 +292,6 @@
             this.processImage.UseVisualStyleBackColor = false;
             this.processImage.Click += new System.EventHandler(this.processImage_Click);
             // 
-            // subtraction
-            // 
-            this.subtraction.AutoSize = true;
-            this.subtraction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtraction.Location = new System.Drawing.Point(25, 300);
-            this.subtraction.Name = "subtraction";
-            this.subtraction.Size = new System.Drawing.Size(111, 22);
-            this.subtraction.TabIndex = 5;
-            this.subtraction.TabStop = true;
-            this.subtraction.Text = "Subtraction";
-            this.subtraction.UseVisualStyleBackColor = true;
-            this.subtraction.CheckedChanged += new System.EventHandler(this.subtraction_CheckedChanged);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -327,6 +341,7 @@
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.RadioButton subtraction;
+        private System.Windows.Forms.Button camera;
     }
 }
 
