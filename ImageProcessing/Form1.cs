@@ -56,7 +56,7 @@ namespace ImageProcessing
             }
             else if (sepia.Checked)
             {
-
+                Sepia();
             }
             else
             {
@@ -171,6 +171,38 @@ namespace ImageProcessing
 
             chart1.Series.Add(series);
         }
+
+        public void Sepia()
+        {
+            if (originalBox.Image == null)
+            {
+                MessageBox.Show("Please load an image first.");
+                return;
+            }
+
+            Bitmap source = new Bitmap(originalBox.Image);
+            Bitmap copy = new Bitmap(source.Width, source.Height);
+
+            for (int x = 0; x < source.Width; x++)
+            {
+                for (int y = 0; y < source.Height; y++)
+                {
+                    Color p = source.GetPixel(x, y);
+                    int tr = (int)(0.393 * p.R + 0.769 * p.G + 0.189 * p.B);
+                    int tg = (int)(0.349 * p.R + 0.686 * p.G + 0.168 * p.B);
+                    int tb = (int)(0.272 * p.R + 0.534 * p.G + 0.131 * p.B);
+                    if (tr > 255) tr = 255;
+                    if (tg > 255) tg = 255;
+                    if (tb > 255) tb = 255;
+                    Color sepia = Color.FromArgb(p.A, tr, tg, tb);
+                    copy.SetPixel(x, y, sepia);
+                }
+            }
+
+            processedBox.Image = copy;
+            processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
 
         private void clear_Click(object sender, EventArgs e)
         {
