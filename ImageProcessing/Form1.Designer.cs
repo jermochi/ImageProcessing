@@ -44,6 +44,7 @@
             this.colorInversion = new System.Windows.Forms.RadioButton();
             this.histogram = new System.Windows.Forms.RadioButton();
             this.sepia = new System.Windows.Forms.RadioButton();
+            this.clear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -54,24 +55,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.clear);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 75);
+            this.panel1.Size = new System.Drawing.Size(982, 85);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.sepia);
             this.panel2.Controls.Add(this.histogram);
             this.panel2.Controls.Add(this.colorInversion);
             this.panel2.Controls.Add(this.greyScale);
             this.panel2.Controls.Add(this.basicCopy);
-            this.panel2.Location = new System.Drawing.Point(1, 68);
+            this.panel2.Location = new System.Drawing.Point(1, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 446);
+            this.panel2.Size = new System.Drawing.Size(180, 434);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -150,6 +154,7 @@
             this.loadImage.TabIndex = 4;
             this.loadImage.Text = "Load Image";
             this.loadImage.UseVisualStyleBackColor = true;
+            this.loadImage.Click += new System.EventHandler(this.loadImage_Click);
             // 
             // processImage
             // 
@@ -162,6 +167,7 @@
             this.processImage.TabIndex = 5;
             this.processImage.Text = "Process";
             this.processImage.UseVisualStyleBackColor = false;
+            this.processImage.Click += new System.EventHandler(this.processImage_Click);
             // 
             // basicCopy
             // 
@@ -223,6 +229,18 @@
             this.sepia.Text = "Sepia";
             this.sepia.UseVisualStyleBackColor = true;
             // 
+            // clear
+            // 
+            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.Location = new System.Drawing.Point(787, 20);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(157, 46);
+            this.clear.TabIndex = 6;
+            this.clear.Text = "Clear Image";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,6 +286,7 @@
         private System.Windows.Forms.RadioButton colorInversion;
         private System.Windows.Forms.RadioButton greyScale;
         private System.Windows.Forms.RadioButton basicCopy;
+        private System.Windows.Forms.Button clear;
     }
 }
 
