@@ -30,10 +30,10 @@
         {
             this.subtractImage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.processedBox = new System.Windows.Forms.PictureBox();
+            this.BBox = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.originalBox = new System.Windows.Forms.PictureBox();
+            this.ABox = new System.Windows.Forms.PictureBox();
             this.loadImage = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.subtraction = new System.Windows.Forms.RadioButton();
@@ -50,9 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.loadBackground = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BBox)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.originalBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ABox)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,6 +71,7 @@
             this.subtractImage.TabIndex = 11;
             this.subtractImage.Text = "Subtract";
             this.subtractImage.UseVisualStyleBackColor = false;
+            this.subtractImage.Click += new System.EventHandler(this.subtractImage_Click);
             // 
             // label2
             // 
@@ -82,19 +83,19 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Image B";
             // 
-            // processedBox
+            // BBox
             // 
-            this.processedBox.Location = new System.Drawing.Point(20, 64);
-            this.processedBox.Name = "processedBox";
-            this.processedBox.Size = new System.Drawing.Size(311, 246);
-            this.processedBox.TabIndex = 1;
-            this.processedBox.TabStop = false;
+            this.BBox.Location = new System.Drawing.Point(0, 64);
+            this.BBox.Name = "BBox";
+            this.BBox.Size = new System.Drawing.Size(351, 263);
+            this.BBox.TabIndex = 1;
+            this.BBox.TabStop = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.processedBox);
+            this.panel4.Controls.Add(this.BBox);
             this.panel4.Location = new System.Drawing.Point(595, 115);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(351, 327);
@@ -110,13 +111,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Image A";
             // 
-            // originalBox
+            // ABox
             // 
-            this.originalBox.Location = new System.Drawing.Point(20, 64);
-            this.originalBox.Name = "originalBox";
-            this.originalBox.Size = new System.Drawing.Size(311, 246);
-            this.originalBox.TabIndex = 0;
-            this.originalBox.TabStop = false;
+            this.ABox.Location = new System.Drawing.Point(0, 64);
+            this.ABox.Name = "ABox";
+            this.ABox.Size = new System.Drawing.Size(350, 263);
+            this.ABox.TabIndex = 0;
+            this.ABox.TabStop = false;
             // 
             // loadImage
             // 
@@ -128,12 +129,13 @@
             this.loadImage.TabIndex = 10;
             this.loadImage.Text = "Load Image";
             this.loadImage.UseVisualStyleBackColor = true;
+            this.loadImage.Click += new System.EventHandler(this.loadImage_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.originalBox);
+            this.panel3.Controls.Add(this.ABox);
             this.panel3.Location = new System.Drawing.Point(218, 115);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 327);
@@ -241,6 +243,7 @@
             this.clear.TabIndex = 6;
             this.clear.Text = "Clear Image";
             this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // label3
             // 
@@ -275,9 +278,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(20, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 64);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(311, 246);
+            this.pictureBox1.Size = new System.Drawing.Size(351, 263);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -301,6 +304,7 @@
             this.loadBackground.TabIndex = 12;
             this.loadBackground.Text = "Load Background";
             this.loadBackground.UseVisualStyleBackColor = true;
+            this.loadBackground.Click += new System.EventHandler(this.loadBackground_Click);
             // 
             // SubtractionForm
             // 
@@ -317,10 +321,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "SubtractionForm";
             this.Text = "SubtractionForm";
-            ((System.ComponentModel.ISupportInitialize)(this.processedBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.originalBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ABox)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -338,10 +342,10 @@
 
         private System.Windows.Forms.Button subtractImage;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox processedBox;
+        private System.Windows.Forms.PictureBox BBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox originalBox;
+        private System.Windows.Forms.PictureBox ABox;
         private System.Windows.Forms.Button loadImage;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton subtraction;

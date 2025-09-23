@@ -53,5 +53,75 @@ namespace ImageProcessing
             this.Hide();
             Application.OpenForms["Form1"].Show();
         }
+
+        private void loadImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select an image";
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ABox.Image = Image.FromFile(ofd.FileName);
+                ABox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
+        private void loadBackground_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select an image";
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                BBox.Image = Image.FromFile(ofd.FileName);
+                BBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+
+        private void subtractImage_Click(object sender, EventArgs e)
+        {
+            if (ABox.Image == null || BBox.Image == null)
+            {
+                MessageBox.Show("Please load both images first.");
+                return;
+            }
+
+            Bitmap imgA = new Bitmap(ABox.Image);
+            Bitmap imgB = new Bitmap(BBox.Image);
+            Bitmap result = new Bitmap(imgA.Width, imgA.Height);
+            Color mygreen = Color.FromArgb(0,255,0);
+            int greygreen = (mygreen.R + mygreen.G + mygreen.B) / 3;
+            int threshold = 30;
+
+            for (int x = 0; x < imgA.Width; x++)
+            {
+                for (int y = 0; y < imgA.Height; y++)
+                {
+                    Color pixel = imgA.GetPixel(x, y);
+                    Color backPixel = imgB.GetPixel(x, y);
+
+                    int grey = (pixel.R + pixel.G + pixel.B) / 3;
+                    int subtractvalue = Math.Abs(grey - greygreen);
+                    if(subtractvalue < threshold && pixel.G > pixel.R && pixel.G > pixel.B)
+                    {
+                        result.SetPixel(x, y, backPixel);
+                    }else
+                    {
+                        result.SetPixel(x, y, pixel);
+                    }
+                }
+            }
+            pictureBox1.Image = result;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        private void clear_Click(object sender, EventArgs e)
+        {
+            ABox.Image = null;
+            BBox.Image = null;
+            pictureBox1.Image = null;
+        }
     }
 }
