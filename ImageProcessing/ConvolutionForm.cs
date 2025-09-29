@@ -89,28 +89,129 @@ namespace ImageProcessing
                 return;
             }
             Bitmap source = new Bitmap(originalBox.Image);
- 
+
             if (smooth.Checked)
             {
                 Smooth(source, 1);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
-            } else if (gaussian.Checked)
+            }
+            else if (gaussian.Checked)
             {
                 GaussianBlur(source, 4);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
-            } else if (sharpen.Checked)
+            }
+            else if (sharpen.Checked)
             {
                 Sharpen(source, 11);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
-            } else if (meanRemoval.Checked)
+            }
+            else if (meanRemoval.Checked)
             {
                 MeanRemoval(source, 9);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
+            else if (embossLaplascian.Checked)
+            {
+                EmbossLaplascian(source, 4);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+            }
+            else if (horzvert.Checked)
+            {
+                HorzVert(source, 4);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else if (allDir.Checked)
+            {
+                AllDir(source, 8);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+
+            }
+            else if (lossy.Checked)
+            {
+                Lossy(source, 4);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else if (horz.Checked)
+            {
+                Horz(source, 2);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else if (vert.Checked)
+            {
+                Vert(source, 0);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+        public static bool Vert(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(0);
+            m.TopMid = -1;
+            m.BottomMid = 1;
+            m.Pixel = nWeight;
+            m.Factor = nWeight + 1;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
+        }
+        public static bool Horz(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(0);
+            m.MidLeft = m.MidRight = -1;
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 1;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
+        }
+        public static bool Lossy(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(-2);
+            m.TopLeft = m.TopRight = m.BottomMid = 1;
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 3;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
+        }
+        public static bool AllDir(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(-1);
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 7;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
+        }
+        public static bool HorzVert(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(0);
+            m.MidLeft = m.MidRight = m.BottomMid = m.TopMid = -1;
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 3;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
+        }
+        public static bool EmbossLaplascian(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(-1);
+            m.MidLeft = m.MidRight = m.BottomMid = m.TopMid = 0;
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 3;
+            m.Offset = 127;
+            return BitmapFilter.Conv3x3(b, m);
         }
         public static bool MeanRemoval(Bitmap b, int nWeight)
         {

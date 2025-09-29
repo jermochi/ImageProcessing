@@ -32,8 +32,8 @@
             this.loadImage = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.processedBox = new System.Windows.Forms.PictureBox();
-            this.subtraction = new System.Windows.Forms.RadioButton();
-            this.sepia = new System.Windows.Forms.RadioButton();
+            this.horzvert = new System.Windows.Forms.RadioButton();
+            this.embossLaplascian = new System.Windows.Forms.RadioButton();
             this.meanRemoval = new System.Windows.Forms.RadioButton();
             this.sharpen = new System.Windows.Forms.RadioButton();
             this.gaussian = new System.Windows.Forms.RadioButton();
@@ -48,6 +48,10 @@
             this.clear = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.allDir = new System.Windows.Forms.RadioButton();
+            this.lossy = new System.Windows.Forms.RadioButton();
+            this.horz = new System.Windows.Forms.RadioButton();
+            this.vert = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.processedBox)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.originalBox)).BeginInit();
@@ -61,7 +65,7 @@
             this.backBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(10, 372);
+            this.backBtn.Location = new System.Drawing.Point(27, 400);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(154, 46);
             this.backBtn.TabIndex = 8;
@@ -73,7 +77,7 @@
             // 
             this.loadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadImage.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadImage.Location = new System.Drawing.Point(316, 457);
+            this.loadImage.Location = new System.Drawing.Point(348, 457);
             this.loadImage.Name = "loadImage";
             this.loadImage.Size = new System.Drawing.Size(157, 46);
             this.loadImage.TabIndex = 10;
@@ -99,35 +103,35 @@
             this.processedBox.TabIndex = 1;
             this.processedBox.TabStop = false;
             // 
-            // subtraction
+            // horzvert
             // 
-            this.subtraction.AutoSize = true;
-            this.subtraction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtraction.Location = new System.Drawing.Point(25, 252);
-            this.subtraction.Name = "subtraction";
-            this.subtraction.Size = new System.Drawing.Size(111, 22);
-            this.subtraction.TabIndex = 5;
-            this.subtraction.TabStop = true;
-            this.subtraction.Text = "Subtraction";
-            this.subtraction.UseVisualStyleBackColor = true;
+            this.horzvert.AutoSize = true;
+            this.horzvert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horzvert.Location = new System.Drawing.Point(19, 206);
+            this.horzvert.Name = "horzvert";
+            this.horzvert.Size = new System.Drawing.Size(119, 22);
+            this.horzvert.TabIndex = 5;
+            this.horzvert.TabStop = true;
+            this.horzvert.Text = "Horz/Vertical";
+            this.horzvert.UseVisualStyleBackColor = true;
             // 
-            // sepia
+            // embossLaplascian
             // 
-            this.sepia.AutoSize = true;
-            this.sepia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sepia.Location = new System.Drawing.Point(25, 207);
-            this.sepia.Name = "sepia";
-            this.sepia.Size = new System.Drawing.Size(69, 22);
-            this.sepia.TabIndex = 4;
-            this.sepia.TabStop = true;
-            this.sepia.Text = "Sepia";
-            this.sepia.UseVisualStyleBackColor = true;
+            this.embossLaplascian.AutoSize = true;
+            this.embossLaplascian.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.embossLaplascian.Location = new System.Drawing.Point(17, 168);
+            this.embossLaplascian.Name = "embossLaplascian";
+            this.embossLaplascian.Size = new System.Drawing.Size(164, 22);
+            this.embossLaplascian.TabIndex = 4;
+            this.embossLaplascian.TabStop = true;
+            this.embossLaplascian.Text = "Emboss Laplascian";
+            this.embossLaplascian.UseVisualStyleBackColor = true;
             // 
             // meanRemoval
             // 
             this.meanRemoval.AutoSize = true;
             this.meanRemoval.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.meanRemoval.Location = new System.Drawing.Point(25, 162);
+            this.meanRemoval.Location = new System.Drawing.Point(19, 130);
             this.meanRemoval.Name = "meanRemoval";
             this.meanRemoval.Size = new System.Drawing.Size(134, 22);
             this.meanRemoval.TabIndex = 3;
@@ -139,7 +143,7 @@
             // 
             this.sharpen.AutoSize = true;
             this.sharpen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sharpen.Location = new System.Drawing.Point(25, 116);
+            this.sharpen.Location = new System.Drawing.Point(19, 94);
             this.sharpen.Name = "sharpen";
             this.sharpen.Size = new System.Drawing.Size(89, 22);
             this.sharpen.TabIndex = 2;
@@ -151,7 +155,7 @@
             // 
             this.gaussian.AutoSize = true;
             this.gaussian.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gaussian.Location = new System.Drawing.Point(25, 69);
+            this.gaussian.Location = new System.Drawing.Point(19, 59);
             this.gaussian.Name = "gaussian";
             this.gaussian.Size = new System.Drawing.Size(129, 22);
             this.gaussian.TabIndex = 1;
@@ -164,7 +168,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.processedBox);
-            this.panel4.Location = new System.Drawing.Point(595, 114);
+            this.panel4.Location = new System.Drawing.Point(628, 115);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(358, 327);
             this.panel4.TabIndex = 9;
@@ -181,7 +185,7 @@
             // 
             this.smooth.AutoSize = true;
             this.smooth.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smooth.Location = new System.Drawing.Point(25, 20);
+            this.smooth.Location = new System.Drawing.Point(19, 21);
             this.smooth.Name = "smooth";
             this.smooth.Size = new System.Drawing.Size(83, 22);
             this.smooth.TabIndex = 0;
@@ -194,7 +198,7 @@
             this.processImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.processImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.processImage.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processImage.Location = new System.Drawing.Point(692, 457);
+            this.processImage.Location = new System.Drawing.Point(726, 457);
             this.processImage.Name = "processImage";
             this.processImage.Size = new System.Drawing.Size(157, 46);
             this.processImage.TabIndex = 11;
@@ -207,7 +211,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.originalBox);
-            this.panel3.Location = new System.Drawing.Point(218, 114);
+            this.panel3.Location = new System.Drawing.Point(251, 115);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(350, 327);
             this.panel3.TabIndex = 8;
@@ -226,16 +230,20 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.vert);
+            this.panel2.Controls.Add(this.horz);
+            this.panel2.Controls.Add(this.lossy);
+            this.panel2.Controls.Add(this.allDir);
             this.panel2.Controls.Add(this.backBtn);
-            this.panel2.Controls.Add(this.subtraction);
-            this.panel2.Controls.Add(this.sepia);
+            this.panel2.Controls.Add(this.horzvert);
+            this.panel2.Controls.Add(this.embossLaplascian);
             this.panel2.Controls.Add(this.meanRemoval);
             this.panel2.Controls.Add(this.sharpen);
             this.panel2.Controls.Add(this.gaussian);
             this.panel2.Controls.Add(this.smooth);
             this.panel2.Location = new System.Drawing.Point(1, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 570);
+            this.panel2.Size = new System.Drawing.Size(216, 570);
             this.panel2.TabIndex = 7;
             // 
             // camera
@@ -254,7 +262,7 @@
             // 
             this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear.Location = new System.Drawing.Point(787, 20);
+            this.clear.Location = new System.Drawing.Point(827, 20);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(157, 46);
             this.clear.TabIndex = 6;
@@ -281,14 +289,62 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 85);
+            this.panel1.Size = new System.Drawing.Size(1028, 85);
             this.panel1.TabIndex = 6;
+            // 
+            // allDir
+            // 
+            this.allDir.AutoSize = true;
+            this.allDir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allDir.Location = new System.Drawing.Point(19, 245);
+            this.allDir.Name = "allDir";
+            this.allDir.Size = new System.Drawing.Size(123, 22);
+            this.allDir.TabIndex = 9;
+            this.allDir.TabStop = true;
+            this.allDir.Text = "All Directions";
+            this.allDir.UseVisualStyleBackColor = true;
+            // 
+            // lossy
+            // 
+            this.lossy.AutoSize = true;
+            this.lossy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lossy.Location = new System.Drawing.Point(19, 282);
+            this.lossy.Name = "lossy";
+            this.lossy.Size = new System.Drawing.Size(70, 22);
+            this.lossy.TabIndex = 10;
+            this.lossy.TabStop = true;
+            this.lossy.Text = "Lossy";
+            this.lossy.UseVisualStyleBackColor = true;
+            // 
+            // horz
+            // 
+            this.horz.AutoSize = true;
+            this.horz.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horz.Location = new System.Drawing.Point(19, 319);
+            this.horz.Name = "horz";
+            this.horz.Size = new System.Drawing.Size(138, 22);
+            this.horz.TabIndex = 11;
+            this.horz.TabStop = true;
+            this.horz.Text = "Horizontal Only";
+            this.horz.UseVisualStyleBackColor = true;
+            // 
+            // vert
+            // 
+            this.vert.AutoSize = true;
+            this.vert.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vert.Location = new System.Drawing.Point(19, 355);
+            this.vert.Name = "vert";
+            this.vert.Size = new System.Drawing.Size(117, 22);
+            this.vert.TabIndex = 12;
+            this.vert.TabStop = true;
+            this.vert.Text = "Vertical Only";
+            this.vert.UseVisualStyleBackColor = true;
             // 
             // ConvolutionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 526);
+            this.ClientSize = new System.Drawing.Size(1018, 558);
             this.Controls.Add(this.loadImage);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.processImage);
@@ -317,8 +373,8 @@
         private System.Windows.Forms.Button loadImage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox processedBox;
-        private System.Windows.Forms.RadioButton subtraction;
-        private System.Windows.Forms.RadioButton sepia;
+        private System.Windows.Forms.RadioButton horzvert;
+        private System.Windows.Forms.RadioButton embossLaplascian;
         private System.Windows.Forms.RadioButton meanRemoval;
         private System.Windows.Forms.RadioButton sharpen;
         private System.Windows.Forms.RadioButton gaussian;
@@ -333,5 +389,9 @@
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton lossy;
+        private System.Windows.Forms.RadioButton allDir;
+        private System.Windows.Forms.RadioButton vert;
+        private System.Windows.Forms.RadioButton horz;
     }
 }
