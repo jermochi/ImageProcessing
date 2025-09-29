@@ -258,5 +258,12 @@ namespace ImageProcessing
                 isPreviewing = false;
             }
         }
+
+        private void convBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConvolutionForm convForm = new ConvolutionForm();
+            convForm.Show();
+        }
     }
 }

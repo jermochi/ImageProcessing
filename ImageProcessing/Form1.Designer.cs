@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.camera = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.processedBox = new System.Windows.Forms.PictureBox();
             this.loadImage = new System.Windows.Forms.Button();
             this.processImage = new System.Windows.Forms.Button();
+            this.convBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.convBtn);
             this.panel2.Controls.Add(this.subtraction);
             this.panel2.Controls.Add(this.sepia);
             this.panel2.Controls.Add(this.histogram);
@@ -235,16 +237,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(-21, 64);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(509, 263);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
@@ -291,6 +293,19 @@
             this.processImage.Text = "Process";
             this.processImage.UseVisualStyleBackColor = false;
             this.processImage.Click += new System.EventHandler(this.processImage_Click);
+            // 
+            // convBtn
+            // 
+            this.convBtn.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.convBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.convBtn.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convBtn.Location = new System.Drawing.Point(10, 356);
+            this.convBtn.Name = "convBtn";
+            this.convBtn.Size = new System.Drawing.Size(154, 46);
+            this.convBtn.TabIndex = 8;
+            this.convBtn.Text = "Convolution";
+            this.convBtn.UseVisualStyleBackColor = false;
+            this.convBtn.Click += new System.EventHandler(this.convBtn_Click);
             // 
             // Form1
             // 
@@ -342,6 +357,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.RadioButton subtraction;
         private System.Windows.Forms.Button camera;
+        private System.Windows.Forms.Button convBtn;
     }
 }
 

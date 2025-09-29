@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\ImageProcessing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|c:\\users\\user\\source\\repos\\imageprocessing\\imageprocessing\\convolutionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\convolutionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|c:\\users\\user\\source\\repos\\imageprocessing\\imageprocessing\\convolutionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\convolutionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|c:\\users\\user\\source\\repos\\imageprocessing\\imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|c:\\users\\user\\source\\repos\\imageprocessing\\imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|C:\\Users\\User\\source\\repos\\ImageProcessing\\imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\subtractionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|C:\\Users\\User\\source\\repos\\ImageProcessing\\imageprocessing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:ImageProcessing\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|C:\\Users\\User\\source\\repos\\ImageProcessing\\imageprocessing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{193D2527-14F0-48E4-99BF-ADE14CE3F210}|ImageProcessing\\ImageProcessing.csproj|solutionrelative:imageprocessing\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,45 +50,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "SubtractionForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs",
+              "RelativeDocumentMoniker": "ImageProcessing\\SubtractionForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs",
+              "RelativeToolTip": "ImageProcessing\\SubtractionForm.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T12:26:29.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SubtractionForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs",
               "RelativeDocumentMoniker": "ImageProcessing\\SubtractionForm.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs [Design]",
               "RelativeToolTip": "ImageProcessing\\SubtractionForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T18:08:30.171Z",
+              "WhenOpened": "2025-09-29T12:26:24.952Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SubtractionForm.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs",
-              "RelativeDocumentMoniker": "ImageProcessing\\SubtractionForm.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\SubtractionForm.cs",
-              "RelativeToolTip": "ImageProcessing\\SubtractionForm.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAowE4AAAAtAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ConvolutionForm.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\ConvolutionForm.cs",
+              "RelativeDocumentMoniker": "ImageProcessing\\ConvolutionForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\ConvolutionForm.cs",
+              "RelativeToolTip": "ImageProcessing\\ConvolutionForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAApwBYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T16:51:50.91Z",
+              "WhenOpened": "2025-09-29T12:20:45.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "ConvolutionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\ConvolutionForm.cs",
+              "RelativeDocumentMoniker": "ImageProcessing\\ConvolutionForm.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\ConvolutionForm.cs [Design]",
+              "RelativeToolTip": "ImageProcessing\\ConvolutionForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T12:20:18.558Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\Form1.cs",
               "RelativeDocumentMoniker": "ImageProcessing\\Form1.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\Form1.cs",
               "RelativeToolTip": "ImageProcessing\\Form1.cs",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAQwAIBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAIAwwPgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T15:15:12.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\ImageProcessing\\ImageProcessing\\Form1.cs",
               "RelativeDocumentMoniker": "ImageProcessing\\Form1.cs",
