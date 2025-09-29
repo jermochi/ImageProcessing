@@ -35,7 +35,7 @@
             this.subtraction = new System.Windows.Forms.RadioButton();
             this.sepia = new System.Windows.Forms.RadioButton();
             this.histogram = new System.Windows.Forms.RadioButton();
-            this.colorInversion = new System.Windows.Forms.RadioButton();
+            this.sharpen = new System.Windows.Forms.RadioButton();
             this.gaussian = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.originalBox = new System.Windows.Forms.PictureBox();
@@ -135,17 +135,17 @@
             this.histogram.Text = "Histogram";
             this.histogram.UseVisualStyleBackColor = true;
             // 
-            // colorInversion
+            // sharpen
             // 
-            this.colorInversion.AutoSize = true;
-            this.colorInversion.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorInversion.Location = new System.Drawing.Point(25, 164);
-            this.colorInversion.Name = "colorInversion";
-            this.colorInversion.Size = new System.Drawing.Size(139, 22);
-            this.colorInversion.TabIndex = 2;
-            this.colorInversion.TabStop = true;
-            this.colorInversion.Text = "Color Inversion";
-            this.colorInversion.UseVisualStyleBackColor = true;
+            this.sharpen.AutoSize = true;
+            this.sharpen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sharpen.Location = new System.Drawing.Point(25, 164);
+            this.sharpen.Name = "sharpen";
+            this.sharpen.Size = new System.Drawing.Size(89, 22);
+            this.sharpen.TabIndex = 2;
+            this.sharpen.TabStop = true;
+            this.sharpen.Text = "Sharpen";
+            this.sharpen.UseVisualStyleBackColor = true;
             // 
             // gaussian
             // 
@@ -230,7 +230,7 @@
             this.panel2.Controls.Add(this.subtraction);
             this.panel2.Controls.Add(this.sepia);
             this.panel2.Controls.Add(this.histogram);
-            this.panel2.Controls.Add(this.colorInversion);
+            this.panel2.Controls.Add(this.sharpen);
             this.panel2.Controls.Add(this.gaussian);
             this.panel2.Controls.Add(this.smooth);
             this.panel2.Location = new System.Drawing.Point(1, 84);
@@ -320,7 +320,7 @@
         private System.Windows.Forms.RadioButton subtraction;
         private System.Windows.Forms.RadioButton sepia;
         private System.Windows.Forms.RadioButton histogram;
-        private System.Windows.Forms.RadioButton colorInversion;
+        private System.Windows.Forms.RadioButton sharpen;
         private System.Windows.Forms.RadioButton gaussian;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox originalBox;

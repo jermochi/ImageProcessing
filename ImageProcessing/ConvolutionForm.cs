@@ -100,7 +100,25 @@ namespace ImageProcessing
                 GaussianBlur(source, 4);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            } else if (sharpen.Checked)
+            {
+                Sharpen(source, 11);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            } else
+            {
+                MessageBox.Show("Select a convolution option.");
+                return;
             }
+        }
+        public static bool Sharpen(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(0);
+            m.MidLeft = m.MidRight = m.BottomMid = m.TopMid = -2;
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 8;
+            return BitmapFilter.Conv3x3(b, m);
         }
         public static bool GaussianBlur(Bitmap b, int nWeight)
         {
