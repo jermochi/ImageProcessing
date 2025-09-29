@@ -105,11 +105,20 @@ namespace ImageProcessing
                 Sharpen(source, 11);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
-            } else
+            } else if (meanRemoval.Checked)
             {
-                MessageBox.Show("Select a convolution option.");
-                return;
+                MeanRemoval(source, 9);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
+        }
+        public static bool MeanRemoval(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(-1);   
+            m.Pixel = nWeight;
+            m.Factor = nWeight - 8;
+            return BitmapFilter.Conv3x3(b, m);
         }
         public static bool Sharpen(Bitmap b, int nWeight)
         {

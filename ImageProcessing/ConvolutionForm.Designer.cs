@@ -34,7 +34,7 @@
             this.processedBox = new System.Windows.Forms.PictureBox();
             this.subtraction = new System.Windows.Forms.RadioButton();
             this.sepia = new System.Windows.Forms.RadioButton();
-            this.histogram = new System.Windows.Forms.RadioButton();
+            this.meanRemoval = new System.Windows.Forms.RadioButton();
             this.sharpen = new System.Windows.Forms.RadioButton();
             this.gaussian = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,7 +61,7 @@
             this.backBtn.BackColor = System.Drawing.Color.PaleTurquoise;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.Location = new System.Drawing.Point(10, 356);
+            this.backBtn.Location = new System.Drawing.Point(10, 372);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(154, 46);
             this.backBtn.TabIndex = 8;
@@ -103,7 +103,7 @@
             // 
             this.subtraction.AutoSize = true;
             this.subtraction.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtraction.Location = new System.Drawing.Point(25, 300);
+            this.subtraction.Location = new System.Drawing.Point(25, 252);
             this.subtraction.Name = "subtraction";
             this.subtraction.Size = new System.Drawing.Size(111, 22);
             this.subtraction.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             this.sepia.AutoSize = true;
             this.sepia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sepia.Location = new System.Drawing.Point(25, 255);
+            this.sepia.Location = new System.Drawing.Point(25, 207);
             this.sepia.Name = "sepia";
             this.sepia.Size = new System.Drawing.Size(69, 22);
             this.sepia.TabIndex = 4;
@@ -123,23 +123,23 @@
             this.sepia.Text = "Sepia";
             this.sepia.UseVisualStyleBackColor = true;
             // 
-            // histogram
+            // meanRemoval
             // 
-            this.histogram.AutoSize = true;
-            this.histogram.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.histogram.Location = new System.Drawing.Point(25, 210);
-            this.histogram.Name = "histogram";
-            this.histogram.Size = new System.Drawing.Size(101, 22);
-            this.histogram.TabIndex = 3;
-            this.histogram.TabStop = true;
-            this.histogram.Text = "Histogram";
-            this.histogram.UseVisualStyleBackColor = true;
+            this.meanRemoval.AutoSize = true;
+            this.meanRemoval.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.meanRemoval.Location = new System.Drawing.Point(25, 162);
+            this.meanRemoval.Name = "meanRemoval";
+            this.meanRemoval.Size = new System.Drawing.Size(134, 22);
+            this.meanRemoval.TabIndex = 3;
+            this.meanRemoval.TabStop = true;
+            this.meanRemoval.Text = "Mean Removal";
+            this.meanRemoval.UseVisualStyleBackColor = true;
             // 
             // sharpen
             // 
             this.sharpen.AutoSize = true;
             this.sharpen.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sharpen.Location = new System.Drawing.Point(25, 164);
+            this.sharpen.Location = new System.Drawing.Point(25, 116);
             this.sharpen.Name = "sharpen";
             this.sharpen.Size = new System.Drawing.Size(89, 22);
             this.sharpen.TabIndex = 2;
@@ -151,7 +151,7 @@
             // 
             this.gaussian.AutoSize = true;
             this.gaussian.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gaussian.Location = new System.Drawing.Point(25, 117);
+            this.gaussian.Location = new System.Drawing.Point(25, 69);
             this.gaussian.Name = "gaussian";
             this.gaussian.Size = new System.Drawing.Size(129, 22);
             this.gaussian.TabIndex = 1;
@@ -181,7 +181,7 @@
             // 
             this.smooth.AutoSize = true;
             this.smooth.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.smooth.Location = new System.Drawing.Point(25, 68);
+            this.smooth.Location = new System.Drawing.Point(25, 20);
             this.smooth.Name = "smooth";
             this.smooth.Size = new System.Drawing.Size(83, 22);
             this.smooth.TabIndex = 0;
@@ -229,13 +229,13 @@
             this.panel2.Controls.Add(this.backBtn);
             this.panel2.Controls.Add(this.subtraction);
             this.panel2.Controls.Add(this.sepia);
-            this.panel2.Controls.Add(this.histogram);
+            this.panel2.Controls.Add(this.meanRemoval);
             this.panel2.Controls.Add(this.sharpen);
             this.panel2.Controls.Add(this.gaussian);
             this.panel2.Controls.Add(this.smooth);
             this.panel2.Location = new System.Drawing.Point(1, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 434);
+            this.panel2.Size = new System.Drawing.Size(180, 570);
             this.panel2.TabIndex = 7;
             // 
             // camera
@@ -288,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 517);
+            this.ClientSize = new System.Drawing.Size(982, 526);
             this.Controls.Add(this.loadImage);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.processImage);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.PictureBox processedBox;
         private System.Windows.Forms.RadioButton subtraction;
         private System.Windows.Forms.RadioButton sepia;
-        private System.Windows.Forms.RadioButton histogram;
+        private System.Windows.Forms.RadioButton meanRemoval;
         private System.Windows.Forms.RadioButton sharpen;
         private System.Windows.Forms.RadioButton gaussian;
         private System.Windows.Forms.Panel panel4;
