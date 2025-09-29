@@ -39,7 +39,7 @@
             this.greyScale = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.originalBox = new System.Windows.Forms.PictureBox();
-            this.basicCopy = new System.Windows.Forms.RadioButton();
+            this.smooth = new System.Windows.Forms.RadioButton();
             this.processImage = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -177,17 +177,17 @@
             this.originalBox.TabIndex = 0;
             this.originalBox.TabStop = false;
             // 
-            // basicCopy
+            // smooth
             // 
-            this.basicCopy.AutoSize = true;
-            this.basicCopy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.basicCopy.Location = new System.Drawing.Point(25, 68);
-            this.basicCopy.Name = "basicCopy";
-            this.basicCopy.Size = new System.Drawing.Size(108, 22);
-            this.basicCopy.TabIndex = 0;
-            this.basicCopy.TabStop = true;
-            this.basicCopy.Text = "Basic Copy";
-            this.basicCopy.UseVisualStyleBackColor = true;
+            this.smooth.AutoSize = true;
+            this.smooth.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smooth.Location = new System.Drawing.Point(25, 68);
+            this.smooth.Name = "smooth";
+            this.smooth.Size = new System.Drawing.Size(83, 22);
+            this.smooth.TabIndex = 0;
+            this.smooth.TabStop = true;
+            this.smooth.Text = "Smooth";
+            this.smooth.UseVisualStyleBackColor = true;
             // 
             // processImage
             // 
@@ -200,6 +200,7 @@
             this.processImage.TabIndex = 11;
             this.processImage.Text = "Process";
             this.processImage.UseVisualStyleBackColor = false;
+            this.processImage.Click += new System.EventHandler(this.processImage_Click);
             // 
             // panel3
             // 
@@ -231,7 +232,7 @@
             this.panel2.Controls.Add(this.histogram);
             this.panel2.Controls.Add(this.colorInversion);
             this.panel2.Controls.Add(this.greyScale);
-            this.panel2.Controls.Add(this.basicCopy);
+            this.panel2.Controls.Add(this.smooth);
             this.panel2.Location = new System.Drawing.Point(1, 84);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 434);
@@ -323,7 +324,7 @@
         private System.Windows.Forms.RadioButton greyScale;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox originalBox;
-        private System.Windows.Forms.RadioButton basicCopy;
+        private System.Windows.Forms.RadioButton smooth;
         private System.Windows.Forms.Button processImage;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;

@@ -223,6 +223,7 @@ namespace ImageProcessing
                 subForm.Show();
             }
         }
+      
 
         private void camera_Click(object sender, EventArgs e)
         {

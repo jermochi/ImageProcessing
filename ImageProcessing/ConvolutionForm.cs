@@ -80,5 +80,30 @@ namespace ImageProcessing
                 isPreviewing = false;
             }
         }
+
+        private void processImage_Click(object sender, EventArgs e)
+        {
+            if (originalBox.Image == null)
+            {
+                MessageBox.Show("Please load an image first.");
+                return;
+            }
+            Bitmap source = new Bitmap(originalBox.Image);
+ 
+            if (smooth.Checked)
+            {
+                Smooth(source, 1);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+        public static bool Smooth(Bitmap b, int nWeight /* default to 1 */)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(1);
+            m.Pixel = nWeight;
+            m.Factor = nWeight + 8;
+            return BitmapFilter.Conv3x3(b, m);
+        }
     }
 }
