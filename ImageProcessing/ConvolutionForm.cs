@@ -95,7 +95,21 @@ namespace ImageProcessing
                 Smooth(source, 1);
                 processedBox.Image = source;
                 processedBox.SizeMode = PictureBoxSizeMode.Zoom;
+            } else if (gaussian.Checked)
+            {
+                GaussianBlur(source, 4);
+                processedBox.Image = source;
+                processedBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
+        }
+        public static bool GaussianBlur(Bitmap b, int nWeight)
+        {
+            ConvMatrix m = new ConvMatrix();
+            m.SetAll(1);        
+            m.MidLeft = m.MidRight = m.BottomMid = m.TopMid = 2; 
+            m.Pixel = nWeight;   
+            m.Factor = nWeight + 12; 
+            return BitmapFilter.Conv3x3(b, m);
         }
         public static bool Smooth(Bitmap b, int nWeight /* default to 1 */)
         {
